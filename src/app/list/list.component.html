@@ -12,9 +12,9 @@
       <tbody>
           <tr *ngFor="let despesa of despesas">
               <td><div class="glyphicon {{despesa.icone}}"></div> {{despesa.tipo}}</td>
-              <td>{{despesa.data | date: 'dd/MM/yyyy HH:mm:ss' }}</td>
+              <td>{{despesa.data | amTimeAgo }}</td>
               <td>{{despesa.nome}}</td>
-              <td>{{despesa.valor}}</td>
+              <td>{{despesa.valor | currency:'BRL':true:'1.2-2' | decimalBr}}</td>
               <td>
           <button class="delete" (click)="del(despesa.id)"><div class="glyphicon glyphicon-trash"></div></button>
          </tr>
